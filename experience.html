@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Experience - My Portfolio</title>
+    <script src="bgm.js"></script>
+    <style>
+        body {
+            font-family: Roboto, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f8f8f8;
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: center;
+            background-color: #1B1B1B;
+            padding: 10px 0;
+        }
+
+        .navbar a {
+            color: white;
+            text-decoration: none;
+            margin: 0 15px;
+            font-size: 16px;
+        }
+
+        .navbar a:hover {
+            text-decoration: underline;
+        }
+
+        .content {
+            max-width: 1000px;
+            margin: 30px auto;
+            background-color: white;
+            padding: 20px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 1.5);
+            text-align: center;
+        }
+
+        .content h2 {
+            font-size: 36px;
+            margin-bottom: 20px;
+            animation: fadeIn 1s ease-in-out;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 30px;
+        }
+
+        table, th, td {
+            border: 1px solid #ddd;
+            text-align: center;
+        }
+
+        th, td {
+            padding: 15px;
+        }
+
+        th {
+            background-color: #1B1B1B;
+            color: white;
+        }
+
+        td {
+            background-color: #f8f8f8;
+        }
+
+        .btn-open {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            text-align: center;
+            text-decoration: none;
+            cursor: pointer;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+
+        .btn-open:hover {
+            background-color: #45a049;
+        }
+
+        .footer {
+            text-align: center;
+            background-color: #1B1B1B;
+            color: white;
+            padding: 10px 0;
+            margin-top: 30px;
+        }
+
+ 
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0, 0, 0, 0.7);
+        }
+
+        .modal-content {
+            margin: 10% auto;
+            display: block;
+            max-width: 80%;
+        }
+
+        .modal-close {
+            position: absolute;
+            top: 15px;
+            right: 35px;
+            color: #aaa;
+            font-size: 40px;
+            font-weight: bold;
+        }
+
+        .modal-close:hover,
+        .modal-close:focus {
+            color: black;
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+     
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+    </style>
+</head>
+<body>
+    <audio id="bgm" src="lagu.mp3" loop></audio>
+
+    <div class="navbar">
+	<a href="index.html">Home</a>
+        <a href="biodata.html">Biodata</a>
+        <a href="family.html">Family</a>
+        <a href="education.html">Education</a>
+        <a href="experience.html">Experience</a>
+        <a href="gallery.html">Gallery</a>
+    </div>
+
+ 
+    <div class="content">
+        <h2>My Work Experience</h2>
+        <p>Below are the different jobs I have had throughout my career.</p>
+
+      
+        <table>
+            <thead>
+                <tr>
+                    <th>Job Title</th>
+                    <th>Company</th>
+                    <th>Duration</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Kb Patin haus</td>
+                    <td>Restaurant</td>
+                    <td>August 2024</td>
+                    <td><button class="btn-open" onclick="openModal('pekerja')">Open</button></td>
+                </tr>
+                <tr>
+                    <td>Sell Clothes</td>
+                    <td>Bundle</td>
+                    <td>March 2023</td>
+                    <td><button class="btn-open" onclick="openModal('bundle')">Open</button></td>
+                </tr>
+                <tr>
+                    <td>Worker make food</td>
+                    <td>School Canteen</td>
+                    <td>September 2021</td>
+                    <td><button class="btn-open" onclick="openModal('worker')">Open</button></td>
+                </tr>
+                <tr>
+                    <td>Kitchen Helper</td>
+                    <td>Grand Renai Hotel</td>
+                    <td>May 2023 - Present</td>
+                    <td><button class="btn-open" onclick="openModal('helper')">Open</button></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+   
+    <div id="pekerjaModal" class="modal">
+        <span class="modal-close" onclick="closeModal('pekerja')">&times;</span>
+        <img class="modal-content" id="pekerjaImg" src="pekerja.jpeg" alt="pekerja">
+    </div>
+
+    <div id="bundleModal" class="modal">
+        <span class="modal-close" onclick="closeModal('bundle')">&times;</span>
+        <img class="modal-content" id="bundleImg" src="bundle.jpeg" alt="bundle">
+    </div>
+
+    <div id="workerModal" class="modal">
+        <span class="modal-close" onclick="closeModal('worker')">&times;</span>
+        <img class="modal-content" id="workerImg" src="worker.jpeg" alt="worker">
+    </div>
+
+    <div id="helperModal" class="modal">
+        <span class="modal-close" onclick="closeModal('helper')">&times;</span>
+        <img class="modal-content" id="helperImg" src="helper.jpeg" alt="helper">
+    </div>
+
+   
+    <div class="footer">
+        <p>This Website is developed for IMD318 Individual Assignment</p>
+    </div>
+
+    <script>
+       
+        function openModal(experience) {
+            document.getElementById(experience + "Modal").style.display = "block";
+        }
+
+        
+        function closeModal(experience) {
+            document.getElementById(experience + "Modal").style.display = "none";
+        }
+    </script>
+
+</body>
+</html>
